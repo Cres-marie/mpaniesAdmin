@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_admin/views/categories_page/categoriesScreen.dart';
-import 'package:mpanies_admin/views/dashboardScreen.dart';
+import 'package:mpanies_admin/views/dashboard_page/widgets/dashboardScreen.dart';
+import 'package:mpanies_admin/views/products_page/productsScreen.dart';
 
 import '../../../shared/responsive.dart';
 
@@ -64,7 +65,6 @@ class _MenuState extends State<Menu> {
                       selected = i;
                     });
                     widget.scaffoldKey.currentState!.closeDrawer();
-                    navigateToScreen( context, i);
                   },
                   child: Row(
                     children: [
@@ -99,28 +99,5 @@ class _MenuState extends State<Menu> {
 
 
 
-  void navigateToScreen(BuildContext context,int index) {
-    switch (index) {
-      case 0:
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard()));
-        break;
-      case 1:
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Categories()));
-        break;
-      case 2:
-        Navigator.of(context).pushReplacementNamed('/products');
-        break;
-      case 3:
-        Navigator.of(context).pushReplacementNamed('/orders');
-        break;
-      case 4:
-        Navigator.of(context).pushReplacementNamed('/users');
-        break;
-      case 5:
-        Navigator.of(context).pushReplacementNamed('/signout');
-        break;
-      // Add more cases for additional screens
-    }
-  }
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_admin/views/dashboardScreen.dart';
+import 'package:mpanies_admin/views/dashboard_page/widgets/dashboardScreen.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../shared/responsive.dart';
-import 'dashboard_page/widgets/home.dart';
-import 'dashboard_page/widgets/menu.dart';
+import '../../../shared/responsive.dart';
+import 'home.dart';
+import 'menu.dart';
 
 class DashBoard extends StatelessWidget {
   DashBoard({super.key});
