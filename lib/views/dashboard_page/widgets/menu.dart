@@ -15,10 +15,10 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   List<Map<String, String>> menu = [
     { 'icon': 'assets/svg/home.svg', 'title': "Dashboard" },
-    { 'icon': 'assets/svg/profile.svg', 'title': "Profile" },
-    { 'icon': 'assets/svg/exercise.svg', 'title': "Exercise" },
-    { 'icon': 'assets/svg/setting.svg', 'title': "Settings" },
-    { 'icon': 'assets/svg/history.svg', 'title': "History" },
+    { 'icon': 'assets/svg/categories-1.svg', 'title': "Categories" },
+    { 'icon': 'assets/svg/product-1.svg', 'title': "Products" },
+    { 'icon': 'assets/svg/all-orders-1.svg', 'title': "Orders" },
+    { 'icon': 'assets/svg/person-1.svg', 'title': "Users" },
     { 'icon': 'assets/svg/signout.svg', 'title': "Signout" },
   ];
 
@@ -69,7 +69,7 @@ class _MenuState extends State<Menu> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 13, vertical: 7),
                         child: SvgPicture.asset(
-                          menu[i]['icon']!,
+                          menu[i]['icon']!,width: 15, height: 15,
                           color: selected == i ? Colors.black : Colors.grey,
                         ),
                       ),

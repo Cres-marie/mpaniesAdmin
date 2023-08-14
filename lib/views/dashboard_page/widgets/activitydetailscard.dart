@@ -9,10 +9,10 @@ class ActivityDetailsCard extends StatelessWidget {
 
   final List<Map<String , String >> healthDetails = 
   [
-    {'icon': 'assets/svg/burn.svg', 'value': "305", 'title': "Calories burned"},
-    {'icon': 'assets/svg/steps.svg', 'value': "10,983", 'title': "Steps"},
-    {'icon': 'assets/svg/distance.svg', 'value': "7km", 'title': "Distance"},
-    {'icon': 'assets/svg/sleep.svg', 'value': "7h48m", 'title': "Sleep"},
+    {'icon': 'assets/svg/categories-2.svg', 'value': "305", 'title': "Categories"},
+    {'icon': 'assets/svg/product-2.svg', 'value': "10,983", 'title': "Products"},
+    {'icon': 'assets/svg/all-orders-2.svg', 'value': "7000", 'title': "Orders"},
+    {'icon': 'assets/svg/person-2.svg', 'value': "8003", 'title': "Users"},
   ];
 
   @override
@@ -31,7 +31,7 @@ class ActivityDetailsCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset(healthDetails[i]['icon']!),
+              SvgPicture.asset(healthDetails[i]['icon']!, width: 35, height: 35,),
               Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 4),
                 child: Text(
