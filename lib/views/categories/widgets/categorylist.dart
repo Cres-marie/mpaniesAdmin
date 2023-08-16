@@ -27,6 +27,7 @@ class _CategoryListTableState extends State<CategoryListTable> {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Card(
+        elevation: 2,
         color: Colors.white,
         child: PaginatedDataTable(
           //header: Text('Category List'), // Display a header for the table

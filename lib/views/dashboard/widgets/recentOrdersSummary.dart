@@ -16,6 +16,7 @@ class _RecentOrdersSummaryState extends State<RecentOrdersSummary> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Card(
+            elevation: 2,
             color: Colors.white,
             child: DataTable(
               columns: const <DataColumn>[
