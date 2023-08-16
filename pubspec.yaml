@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
   fl_chart: ^0.63.0
+  flutter_admin_scaffold: ^1.2.0
+  responsive_builder: ^0.7.0
 
 
 dev_dependencies:
