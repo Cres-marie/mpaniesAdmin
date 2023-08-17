@@ -69,6 +69,30 @@ class _CategoryDataTableSource extends DataTableSource {
 
   _CategoryDataTableSource(this.selectedRows, this.updateSelectedRow);
 
+  // Custom method to determine the appearance of the "Stock" cell
+  Widget _buildStockCell(int index) {
+    final bool isOutOfStock = productItems[index].stock == 0;
+
+    Color bgColor = isOutOfStock ? Colors.red.withOpacity(0.2) : Colors.green.withOpacity(0.2);
+    Color textColor = isOutOfStock ? Colors.red : Colors.green;
+    String stockText = isOutOfStock ? 'Out of Stock' : '${productItems[index].stock} in stock';
+
+    return Container(
+      decoration: BoxDecoration(
+        color: bgColor,
+        //borderRadius: BorderRadius.circular(5),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      child: Text(
+        stockText,
+        style: TextStyle(
+          color: textColor,
+          fontWeight: FontWeight.w500,fontSize: 12
+        ),
+      ),
+    );
+  }
+
   @override
   DataRow? getRow(int index) {
     if (index >= productItems.length) {
@@ -96,7 +120,7 @@ class _CategoryDataTableSource extends DataTableSource {
           )
         ),  // Display the category name
         DataCell(Text(productItems[index].category)), // Display the category
-        DataCell(Text('${productItems[index].stock.toString()} in stock')), // Display the stock number
+        DataCell(_buildStockCell(index)), // Display the stock number
         DataCell(Text(productItems[index].price.toString())), // Display the price
         DataCell(
           PopupMenuButton<String>(
@@ -132,4 +156,8 @@ class _CategoryDataTableSource extends DataTableSource {
   @override
   int get selectedRowCount => selectedRows.where((isSelected) => isSelected).length;
   // Number of selected rows
+
+
+
+
 }

@@ -85,7 +85,7 @@ class CategoryHeader extends StatelessWidget {
       buttonText: 'Add Category',
       onTap: () {
         // Add your onTap logic here
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
@@ -116,15 +116,16 @@ class AddCategoryHeader extends StatelessWidget {
       },
       onTap: () {
         // Add your onTap logic here
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return CategoriesPage();
-            },
-            transitionDuration: Duration(seconds: 0), // No transition duration
-          ),
-        );
+        // Navigator.pushReplacement(
+        //   context,
+        //   PageRouteBuilder(
+        //     pageBuilder: (context, animation, secondaryAnimation) {
+        //       return CategoriesPage();
+        //     },
+        //     transitionDuration: Duration(seconds: 0), // No transition duration
+        //   ),
+        // );
+        Navigator.pop(context);
       },
       buttonColor: Colors.yellow, // Set the button color
       hoverColor: Colors.yellow[800]!, // Set the hover color
@@ -148,6 +149,37 @@ class ProductHeader extends StatelessWidget {
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
               return AddProduct();
+            },
+            transitionDuration: Duration(seconds: 0), // No transition duration
+          ),
+        );
+      },
+      buttonColor: Colors.yellow, // Set the button color
+      hoverColor: Colors.yellow[800]!, // Set the hover color
+    );
+  }
+}
+
+
+class AddProductHeader extends StatelessWidget {
+  const AddProductHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomHeader(
+      headerText: 'Add Product',
+      buttonText: 'Save',
+      onCancel: () {
+        // Add your onCancel logic here
+        //Navigator.pop(context);
+      },
+      onTap: () {
+        // Add your onTap logic here
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return CategoriesPage();
             },
             transitionDuration: Duration(seconds: 0), // No transition duration
           ),

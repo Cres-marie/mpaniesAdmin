@@ -60,6 +60,7 @@ class _TrialState extends State<Trial> {
         onSelected: (item) {
           if (item.route != null) {
             _updateSelectedRoute(item.route!);
+            //Navigator.of(context).pushReplacementNamed(item.route!);
           }
         },
       ),
