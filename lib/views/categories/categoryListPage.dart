@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
 import 'package:mpanies_admin/views/categories/widgets/header.dart';
-import 'package:mpanies_admin/views/products/widgets/productList.dart';
 
-class ProductsPage extends StatefulWidget {
-  const ProductsPage({super.key});
+class CategoryListPage extends StatefulWidget {
+  const CategoryListPage({super.key});
 
   @override
-  State<ProductsPage> createState() => _ProductsPageState();
+  State<CategoryListPage> createState() => _CategoryListPageState();
 }
 
-class _ProductsPageState extends State<ProductsPage> {
+class _CategoryListPageState extends State<CategoryListPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -18,9 +18,9 @@ class _ProductsPageState extends State<ProductsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProductHeader(),
+            CategoryHeader(),
             SizedBox(height: 20,),
-            ProductsListTable()
+            CategoryListTable()
           ],
         ),
       ),

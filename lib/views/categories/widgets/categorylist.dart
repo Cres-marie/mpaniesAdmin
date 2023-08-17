@@ -21,6 +21,8 @@ class _CategoryListTableState extends State<CategoryListTable> {
     });
   }
 
+  
+
 
   @override
   Widget build(BuildContext context) {
@@ -105,6 +107,8 @@ class _CategoryDataTableSource extends DataTableSource {
       ],
     );
   }
+
+  
 
   @override
   bool get isRowCountApproximate => false;

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/shared/utils.dart';
-import 'package:mpanies_admin/views/categories/categoriesPage.dart';
+import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
+
+import '../../orders/widgets/viewOrderDetails.dart';
 
 class CustomHeader extends StatelessWidget {
   final String headerText;
@@ -116,16 +118,16 @@ class AddCategoryHeader extends StatelessWidget {
       },
       onTap: () {
         // Add your onTap logic here
-        // Navigator.pushReplacement(
-        //   context,
-        //   PageRouteBuilder(
-        //     pageBuilder: (context, animation, secondaryAnimation) {
-        //       return CategoriesPage();
-        //     },
-        //     transitionDuration: Duration(seconds: 0), // No transition duration
-        //   ),
-        // );
-        Navigator.pop(context);
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return CategoryListPage();
+            },
+            transitionDuration: Duration(seconds: 0), // No transition duration
+          ),
+        );
+        //Navigator.pop(context);
       },
       buttonColor: Colors.yellow, // Set the button color
       hoverColor: Colors.yellow[800]!, // Set the hover color
@@ -179,7 +181,7 @@ class AddProductHeader extends StatelessWidget {
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
-              return CategoriesPage();
+              return CategoryListPage();
             },
             transitionDuration: Duration(seconds: 0), // No transition duration
           ),
@@ -191,4 +193,29 @@ class AddProductHeader extends StatelessWidget {
   }
 }
 
+class OrdersHeader extends StatelessWidget {
+  const OrdersHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomHeader(
+      headerText: 'Orders',
+      buttonText: 'View Order Details',
+      onTap: () {
+        // Add your onTap logic here
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return ViewOrderDetails();
+            },
+            transitionDuration: Duration(seconds: 0), // No transition duration
+          ),
+        );
+      },
+      buttonColor: Colors.yellow, // Set the button color
+      hoverColor: Colors.yellow[800]!, // Set the hover color
+    );
+  }
+}
 

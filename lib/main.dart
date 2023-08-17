@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_admin/views/categories/categoriesPage.dart';
+import 'package:mpanies_admin/views/categories/categoryListPage.dart';
+import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
+import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
+import 'package:mpanies_admin/views/orders/ordersListPage.dart';
 import 'package:mpanies_admin/views/orders/ordersPage.dart';
-import 'package:mpanies_admin/views/products/productsPage.dart';
+import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
+import 'package:mpanies_admin/views/products/productListPage.dart';
+import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/trial.dart';
 import 'package:mpanies_admin/views/users/users_page.dart';
 import 'package:mpanies_admin/views/settings_page.dart';
@@ -21,9 +26,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // Set the initial route
       routes: {
         '/': (context) => Trial(), // Home screen
-        '/categories': (context) => CategoriesPage(), // Categories Page
-        '/products': (context) => ProductsPage(),// Products Page
-        '/orders': (context) => OrdersPage(), // Orders Page
+        '/categories/list': (context) => CategoryListPage(), // Category List Page
+        '/categories/add': (context) => AddCategory(), // Add Category Page
+        '/products/list': (context) => ProductListPage(), // Product List Page
+        '/products/add': (context) => AddProduct(), // Add Product Page
+        '/orders/list': (context) => OrdersListPage(), // Orders List Page
+        '/orders/details': (context) => ViewOrderDetails(), // Orders Page
         '/users': (context) => UsersPage(), // Users page
         '/settings': (context) => SettingsPage(), // Settings page
       },
