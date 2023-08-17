@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_admin/shared/utils.dart';
 import 'package:mpanies_admin/views/categories/categoriesPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
+import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 
 class CustomHeader extends StatelessWidget {
   final String headerText;
@@ -130,4 +131,32 @@ class AddCategoryHeader extends StatelessWidget {
     );
   }
 }
+
+
+class ProductHeader extends StatelessWidget {
+  const ProductHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomHeader(
+      headerText: 'Products',
+      buttonText: 'Add Product',
+      onTap: () {
+        // Add your onTap logic here
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return AddProduct();
+            },
+            transitionDuration: Duration(seconds: 0), // No transition duration
+          ),
+        );
+      },
+      buttonColor: Colors.yellow, // Set the button color
+      hoverColor: Colors.yellow[800]!, // Set the hover color
+    );
+  }
+}
+
 

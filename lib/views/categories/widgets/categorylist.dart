@@ -50,7 +50,8 @@ class _CategoryListTableState extends State<CategoryListTable> {
             DataColumn(label: Text('Actions')),    // Column for Actions
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
-          rowsPerPage: 10, // Number of rows to display per page
+          rowsPerPage: brand.length > 10 ?  10 : brand.length , // Number of rows to display per page
+          //emptyRowCount: 0, // Set the number of empty rows to 0
         ),
       ),
     );
@@ -65,6 +66,9 @@ class _CategoryDataTableSource extends DataTableSource {
 
   @override
   DataRow? getRow(int index) {
+    if (index >= brand.length) {
+      return null; // Return null for indices beyond available data
+    }
     return DataRow(
       cells: [
         DataCell(
