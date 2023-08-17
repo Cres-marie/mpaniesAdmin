@@ -7,8 +7,8 @@ class ProductItem {
   final double discountPercentage;
   final double rating;
   final int stock;
-  final String brand;
   final String category;
+  final String subCategory;
   final String images;
 
   ProductItem({
@@ -19,8 +19,8 @@ class ProductItem {
     required this.discountPercentage,
     required this.rating,
     required this.stock,
-    required this.brand,
     required this.category,
+    required this.subCategory,
     required this.images,
   });
 
@@ -35,8 +35,8 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      brand: 'Moisteurizer',
       category: 'Skin Care',
+      subCategory: 'Moisteurizer',
       images: 'assets/images/makeup1.jpg',
       
     ),
@@ -50,7 +50,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 0,
-      brand: 'Spray',
+      subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup8.jpg',
     ),
@@ -63,7 +63,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 18,
-      brand: 'Spray',
+      subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup6.jpg',
     ),
@@ -76,7 +76,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      brand: 'Spray',
+      subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup4.jpg',
     ),
@@ -89,7 +89,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 2,
-      brand: 'Spray',
+      subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup3.jpg',
     ),
@@ -102,7 +102,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 15,
-      brand: 'Spray',
+      subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup7.jpg',
     ),

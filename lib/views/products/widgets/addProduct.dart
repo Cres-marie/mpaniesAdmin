@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/views/products/widgets/addImages.dart';
+import 'package:mpanies_admin/views/products/widgets/pricing.dart';
+import 'package:mpanies_admin/views/products/widgets/productDetails.dart';
+import 'package:mpanies_admin/views/products/widgets/productStock.dart';
+import 'package:mpanies_admin/views/products/widgets/productdropdown.dart';
 
+import '../../../models/productItems.dart';
+import '../../../shared/responsive.dart';
 import '../../../shared/utils.dart';
 import '../../categories/widgets/header.dart';
 
@@ -11,6 +18,7 @@ class AddProduct extends StatefulWidget {
 }
 
 class _AddProductState extends State<AddProduct> {
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -20,44 +28,78 @@ class _AddProductState extends State<AddProduct> {
           children: [
             AddProductHeader(),
             SizedBox(height: 20,), 
-            Card(
-              color: Colors.white,
-              child: Container(
-                padding: EdgeInsets.all(30),         
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    
-                    Text('Name', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
-                    SizedBox(height: 12,),  
-                    Container(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          //contentPadding: const EdgeInsets.all(2),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: borderside,
-                                      //width: 1,
-                            ),
-                        //borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.grey,
-                                      //width: 3,
-                            ),
-                            //borderRadius: BorderRadius.circular(10),
-                          ),
-                          hintText: '',
-                        ),
-                      ),
-                    ),
-      
-                  ],
+
+            if (Responsive.isDesktop(context))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ProductDetails()
                 ),
-              ),
+                SizedBox(width: 20,),
+                Container(
+                  width: MediaQuery.of(context).size.width/4,
+                  child: ProductDropDown()
+                )
+              ],
             ),
-          ],
+
+            if (!Responsive.isDesktop(context))
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ProductDetails(),
+                SizedBox(width: 20,),
+                ProductDropDown()
+              ],
+            ),
+
+            SizedBox(height: 20,),
+
+            if (Responsive.isDesktop(context))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Pricing()
+                ),
+                SizedBox(width: 20,),
+                Container(
+                  width: MediaQuery.of(context).size.width/4,
+                )
+              ],
+            ),
+            if (!Responsive.isDesktop(context))
+            Pricing(),
+
+            
+            SizedBox(height: 20,),
+            if (Responsive.isDesktop(context))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ProductStock()
+                ),
+                SizedBox(width: 20,),
+                Container(
+                  width: MediaQuery.of(context).size.width/4,
+                )
+              ],
+            ),
+
+            if (!Responsive.isDesktop(context))
+            ProductStock(),
+
+            SizedBox(height: 20,),
+
+            AddImages()
+          
+          ]
         ),
       ),
     );

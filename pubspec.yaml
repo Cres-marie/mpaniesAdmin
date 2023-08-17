@@ -39,6 +39,7 @@ dependencies:
   fl_chart: ^0.63.0
   flutter_admin_scaffold: ^1.2.0
   responsive_builder: ^0.7.0
+  number_inc_dec: ^0.8.0
 
 
 dev_dependencies:
