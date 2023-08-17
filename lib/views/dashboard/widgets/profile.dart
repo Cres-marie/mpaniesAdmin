@@ -35,9 +35,9 @@ class ProfileInfo extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(left: appPadding),
+          margin: EdgeInsets.only(left: 6),
           padding: EdgeInsets.symmetric(
-            horizontal: appPadding,
+            horizontal: 6,
             vertical: appPadding / 2,
           ),
           child: Row(
