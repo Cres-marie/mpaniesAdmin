@@ -9,7 +9,7 @@ import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/settings_page.dart';
-import 'package:mpanies_admin/views/users/users_page.dart';
+import 'package:mpanies_admin/views/customers/customersPageList.dart';
 
 import '../shared/utils.dart';
 import 'dashboard/widgets/profile.dart';
@@ -25,13 +25,10 @@ class Trial extends StatefulWidget {
 
 class _TrialState extends State<Trial> {
 
-  String _selectedRoute = '/'; // Initialize with the default route
+  // Add a GlobalKey<NavigatorState> to manage navigation
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 
-  void _updateSelectedRoute(String newRoute) {
-    setState(() {
-      _selectedRoute = newRoute;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -84,48 +81,74 @@ class _TrialState extends State<Trial> {
               AdminMenuItem(title: 'Order Details', route: '/oders/details'),
             ]
           ),
-          AdminMenuItem(icon: Icons.people, title: 'Users', route: '/users'),
+          AdminMenuItem(
+            icon: Icons.people, 
+            title: 'Customers', 
+            //route: '/customers'
+            children: [
+              AdminMenuItem(title: 'Customers List', route: '/customers/list'),
+            ]
+          ),
           AdminMenuItem(icon: Icons.settings, title: 'Settings', route: '/settings'),
         ],
-        selectedRoute: _selectedRoute,
+        selectedRoute: '/',
         onSelected: (item) {
           if (item.route != null) {
-            _updateSelectedRoute(item.route!);
-            //Navigator.of(context).pushReplacementNamed(item.route!);
+            _navigatorKey.currentState?.pushNamed(item.route!);
           }
         },
       ),
       body: Navigator(
-        onGenerateRoute: (settings) {
-          return MaterialPageRoute(builder: (context) => _buildBodyContent());
+        key: _navigatorKey,
+        onGenerateRoute: (menu) {
+          // Handle different routes here
+          if (menu.name == '/') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => DashBoardPage(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          } else if (menu.name == '/categories/list') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => CategoryListPage(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          } else if (menu.name == '/categories/add') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => AddCategory(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }else if (menu.name == '/products/list') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => ProductListPage(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }else if (menu.name == '/products/add') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => AddProduct(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }else if (menu.name == '/orders/list') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => OrdersListPage(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }else if (menu.name == '/customers/list') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => CustomersPageList(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }
+          // Add more routes for other admin menu items
+          // ...
+
+          // Default route (e.g., dashboard)
+          return  MaterialPageRoute(
+            builder: (context) => Center(child: Text('Not Found')),
+          );
         },
-      ), 
+      ),
     );
   }
 
-  Widget _buildBodyContent() {
-    // Add logic to build different content based on the selectedRoute
-    if (_selectedRoute == '/') {
-      return DashBoardPage(); // Navigate to DashboardPage
-    } else if (_selectedRoute == '/categories/list') {
-      return CategoryListPage();
-    } else if (_selectedRoute == '/categories/add') {
-      return AddCategory();
-    } else if (_selectedRoute == '/products/list') {
-      return ProductListPage();
-    } else if (_selectedRoute == '/products/add') {
-      return AddProduct();
-    } else if (_selectedRoute == '/orders/list') {
-      return OrdersListPage(); // Navigate to OrdersPage
-    } else if (_selectedRoute == '/orders/details') {
-      return ViewOrderDetails();
-    } else if (_selectedRoute == '/users') {
-      return UsersPage(); // Navigate to UsersPage
-    } else if (_selectedRoute == '/settings') {
-      return SettingsPage(); // Navigate to SettingsPage
-    } else {
-      // You can handle other routes here
-      return Center(child: Text('Unknown Route'));
-    }
-  }
+  
 }

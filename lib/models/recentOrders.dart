@@ -3,6 +3,7 @@ class RecentOrder {
   final String status;
   final String country;
   final String customerName;
+  final String email;
   final String date;
   final String total;
   final String paid;
@@ -12,7 +13,8 @@ class RecentOrder {
     required this.id, 
     required this.status, 
     required this.country, 
-    required this.customerName, 
+    required this.customerName,
+    required this.email, 
     required this.date, 
     required this.total,
     required this.paid,
@@ -27,6 +29,7 @@ final List<RecentOrder> recentOrders =[
     status: "Pending",
     country: "Uganda",
     customerName: "Hans Weber",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'yes',
@@ -38,6 +41,7 @@ final List<RecentOrder> recentOrders =[
     status: "Pending",
     country: "Uganda",
     customerName: "Andrea Rossi",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'No',
@@ -48,6 +52,7 @@ final List<RecentOrder> recentOrders =[
     status: "completed",
     country: "Uganda",
     customerName: "Leonardo Garcia",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
@@ -58,6 +63,7 @@ final List<RecentOrder> recentOrders =[
     status: "Cancelled",
     country: "Uganda",
     customerName: "Bruno Theodel",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
@@ -68,6 +74,7 @@ final List<RecentOrder> recentOrders =[
     status: "Completed",
     country: "Uganda",
     customerName: "Hans Weber",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
@@ -79,6 +86,7 @@ final List<RecentOrder> recentOrders =[
     status: "Completed",
     country: "Uganda",
     customerName: "Hans Weber",
+    email: 'hellena1234@gmail.com',
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Partially',

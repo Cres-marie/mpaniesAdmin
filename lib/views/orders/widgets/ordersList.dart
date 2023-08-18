@@ -78,7 +78,7 @@ class _CategoryDataTableSource extends DataTableSource {
     Color textColor;
 
     if (paid.toLowerCase() == 'partially') {
-      color = Colors.yellow.withOpacity(0.2);
+      color = Colors.yellow.withOpacity(0.5);
       textColor = Colors.brown; // Set text color to match container color
     } else if (paid.toLowerCase() == 'yes') {
       color = Colors.green.withOpacity(0.2);

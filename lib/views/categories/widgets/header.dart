@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_admin/shared/utils.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
+import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 
 import '../../orders/widgets/viewOrderDetails.dart';
@@ -87,7 +88,7 @@ class CategoryHeader extends StatelessWidget {
       buttonText: 'Add Category',
       onTap: () {
         // Add your onTap logic here
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
@@ -118,7 +119,7 @@ class AddCategoryHeader extends StatelessWidget {
       },
       onTap: () {
         // Add your onTap logic here
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
@@ -127,7 +128,7 @@ class AddCategoryHeader extends StatelessWidget {
             transitionDuration: Duration(seconds: 0), // No transition duration
           ),
         );
-        //Navigator.pop(context);
+        
       },
       buttonColor: Colors.yellow, // Set the button color
       hoverColor: Colors.yellow[800]!, // Set the hover color
@@ -181,11 +182,12 @@ class AddProductHeader extends StatelessWidget {
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
-              return CategoryListPage();
+              return ProductListPage();
             },
             transitionDuration: Duration(seconds: 0), // No transition duration
           ),
         );
+        
       },
       buttonColor: Colors.yellow, // Set the button color
       hoverColor: Colors.yellow[800]!, // Set the hover color
@@ -218,4 +220,31 @@ class OrdersHeader extends StatelessWidget {
     );
   }
 }
+
+class CustomerHeader extends StatelessWidget {
+  const CustomerHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomHeader(
+      headerText: 'Customers',
+      buttonText: 'Customer Details',
+      onTap: () {
+        // Add your onTap logic here
+        // Navigator.push(
+        //   context,
+        //   PageRouteBuilder(
+        //     pageBuilder: (context, animation, secondaryAnimation) {
+        //       return AddProduct();
+        //     },
+        //     transitionDuration: Duration(seconds: 0), // No transition duration
+        //   ),
+        // );
+      },
+      buttonColor: Colors.yellow, // Set the button color
+      hoverColor: Colors.yellow[800]!, // Set the hover color
+    );
+  }
+}
+
 

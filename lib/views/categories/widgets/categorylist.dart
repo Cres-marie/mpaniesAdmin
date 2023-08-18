@@ -9,20 +9,14 @@ class CategoryListTable extends StatefulWidget {
 }
 
 class _CategoryListTableState extends State<CategoryListTable> {
-  // List to keep track of selected rows
   List<bool> selectedRows = List.generate(brand.length, (index) => false);
-
   bool _selectAll = false;
 
-  // Function to update selected rows and trigger a rebuild
   void _updateSelectedRow(int index, bool isSelected) {
     setState(() {
       selectedRows[index] = isSelected;
     });
   }
-
-  
-
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +26,6 @@ class _CategoryListTableState extends State<CategoryListTable> {
         elevation: 2,
         color: Colors.white,
         child: PaginatedDataTable(
-          //header: Text('Category List'), // Display a header for the table
           columns: [
             DataColumn(
               label: Checkbox(
@@ -47,13 +40,12 @@ class _CategoryListTableState extends State<CategoryListTable> {
                 },
               ),
             ),
-            DataColumn(label: Text('Name')),       // Column for Category Name
-            DataColumn(label: Text('Items')),    // Column for Item Number
-            DataColumn(label: Text('Actions')),    // Column for Actions
+            DataColumn(label: Text('Category Name')),
+            DataColumn(label: Text('Item Number')),
+            DataColumn(label: Text('Actions')),
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
-          rowsPerPage: brand.length > 10 ?  10 : brand.length , // Number of rows to display per page
-          //emptyRowCount: 0, // Set the number of empty rows to 0
+          rowsPerPage: brand.length > 10 ? 10 : brand.length,
         ),
       ),
     );
@@ -62,14 +54,14 @@ class _CategoryListTableState extends State<CategoryListTable> {
 
 class _CategoryDataTableSource extends DataTableSource {
   final List<bool> selectedRows;
-  final Function(int, bool) updateSelectedRow; // Callback function
+  final Function(int, bool) updateSelectedRow;
 
   _CategoryDataTableSource(this.selectedRows, this.updateSelectedRow);
 
   @override
   DataRow? getRow(int index) {
     if (index >= brand.length) {
-      return null; // Return null for indices beyond available data
+      return null;
     }
     return DataRow(
       cells: [
@@ -77,12 +69,12 @@ class _CategoryDataTableSource extends DataTableSource {
           Checkbox(
             value: selectedRows[index],
             onChanged: (value) {
-              updateSelectedRow(index, value?? false); // Update individual row selection
+              updateSelectedRow(index, value ?? false);
             },
           ),
         ),
-        DataCell(Text(brand[index].name)),  // Display the category name
-        DataCell(Text(brand[index].itemNo.toString())), // Display the item number
+        DataCell(Text(brand[index].name)),
+        DataCell(Text(brand[index].itemNo.toString())),
         DataCell(
           PopupMenuButton<String>(
             onSelected: (value) {
@@ -93,13 +85,13 @@ class _CategoryDataTableSource extends DataTableSource {
               }
             },
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'edit',
-                child: Text('Edit'),   // Option to edit the category
+                child: Text('Edit'),
               ),
-              PopupMenuItem<String>(
+              const PopupMenuItem<String>(
                 value: 'delete',
-                child: Text('Delete'), // Option to delete the category
+                child: Text('Delete'),
               ),
             ],
           ),
@@ -108,15 +100,12 @@ class _CategoryDataTableSource extends DataTableSource {
     );
   }
 
-  
-
   @override
   bool get isRowCountApproximate => false;
 
   @override
-  int get rowCount => brand.length; // Total number of rows in the table
+  int get rowCount => brand.length;
 
   @override
   int get selectedRowCount => selectedRows.where((isSelected) => isSelected).length;
-  // Number of selected rows
 }

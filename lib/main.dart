@@ -8,7 +8,7 @@ import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/trial.dart';
-import 'package:mpanies_admin/views/users/users_page.dart';
+import 'package:mpanies_admin/views/customers/customersPageList.dart';
 import 'package:mpanies_admin/views/settings_page.dart';
 
 void main() {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         '/products/add': (context) => AddProduct(), // Add Product Page
         '/orders/list': (context) => OrdersListPage(), // Orders List Page
         '/orders/details': (context) => ViewOrderDetails(), // Orders Page
-        '/users': (context) => UsersPage(), // Users page
+        '/customers/list': (context) => CustomersPageList(), // Users page
         '/settings': (context) => SettingsPage(), // Settings page
       },
     );
