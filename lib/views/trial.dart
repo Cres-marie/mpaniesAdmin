@@ -31,7 +31,12 @@ class _TrialState extends State<Trial> {
   // Add a GlobalKey<NavigatorState> to manage navigation
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 
+  void _handleLogout() {
+  // Perform logout logic here, such as clearing user session or credentials
 
+  // Navigate to a fresh page (login or home page)
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginField())); // Replace LoginPage with the appropriate page
+}
 
   @override
   Widget build(BuildContext context) {
@@ -102,13 +107,15 @@ class _TrialState extends State<Trial> {
             ]
           ),
           AdminMenuItem(icon: Icons.settings, title: 'Settings', route: '/settings'),
-          AdminMenuItem(icon: Icons.logout, title: 'Logout', route: '/logout'),
+          AdminMenuItem(icon: Icons.logout, title: 'Logout', route: '/logout',),
         ],
         selectedRoute: '/',
         onSelected: (item) {
-          if (item.route != null) {
-            _navigatorKey.currentState?.pushNamed(item.route!);
-          }
+          if (item.route == '/logout') {
+    _handleLogout(); // Call the logout function
+  } else {
+    _navigatorKey.currentState?.pushNamed(item.route!);
+  }
         },
       ),
       body: Navigator(
