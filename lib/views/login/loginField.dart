@@ -95,21 +95,21 @@ class LoginField extends StatelessWidget {
           ),
 
           Container(
-                    height: 50,
-                    width: 400,
-                    child: ElevatedHoverButton(
-                        text: 'Sign In',
-                        defaultColor: Colors.black,
-                        hoverColor: k2SecondaryGold,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => DashBoardPage()),
-                          ); // Navigate back to the previous page
-                        },
+            height: 50,
+            width: 400,
+            child: ElevatedHoverButton(
+              text: 'Sign In',
+              defaultColor: Colors.black,
+              hoverColor: k2SecondaryGold,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DashBoardPage()),
+                ); // Navigate back to the previous page
+              },
                         //icon: Icons.lock,
-                      ),
-                    ),
+            ),
+          ),
 
 
 

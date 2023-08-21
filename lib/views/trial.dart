@@ -4,6 +4,7 @@ import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
 import 'package:mpanies_admin/views/dashboard/dashboardPage.dart';
+import 'package:mpanies_admin/views/login/loginField.dart';
 import 'package:mpanies_admin/views/orders/ordersPage.dart';
 import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 import 'package:mpanies_admin/views/products/productListPage.dart';
@@ -101,6 +102,7 @@ class _TrialState extends State<Trial> {
             ]
           ),
           AdminMenuItem(icon: Icons.settings, title: 'Settings', route: '/settings'),
+          AdminMenuItem(icon: Icons.logout, title: 'Logout', route: '/logout'),
         ],
         selectedRoute: '/',
         onSelected: (item) {
@@ -159,7 +161,6 @@ class _TrialState extends State<Trial> {
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
             );
           }
-
           // Add more routes for other admin menu items
           // ...
 

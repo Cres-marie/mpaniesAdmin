@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
+import 'package:mpanies_admin/views/login/loginField.dart';
 import 'package:mpanies_admin/views/orders/ordersListPage.dart';
 import 'package:mpanies_admin/views/orders/ordersPage.dart';
 import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/users/list': (context) => UsersListPage(), // users List Page
         '/users/add': (context) => AddUser(), // Add User Page
         '/settings': (context) => SettingsPage(), // Settings page
+        '/logout': (context) => LoginField(), // Settings page
       },
     );
   }
