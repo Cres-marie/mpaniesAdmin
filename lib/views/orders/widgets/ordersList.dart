@@ -52,7 +52,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
             DataColumn(label: Text('Items')),
             DataColumn(label: Text('Payment Method')),
             DataColumn(label: Text('Delivery Status')),
-            DataColumn(label: Text('Total')),
+            DataColumn(label: Text('Total Spent')),
             DataColumn(label: Text('Actions')),    // Column for Actions
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),

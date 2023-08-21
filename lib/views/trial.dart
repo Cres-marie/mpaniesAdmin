@@ -10,6 +10,8 @@ import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/settings_page.dart';
 import 'package:mpanies_admin/views/customers/customersPageList.dart';
+import 'package:mpanies_admin/views/users/usersListPage.dart';
+import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
 import '../shared/utils.dart';
 import 'dashboard/widgets/profile.dart';
@@ -54,7 +56,7 @@ class _TrialState extends State<Trial> {
         items: [
           AdminMenuItem(icon: Icons.dashboard, title: 'Dashboard', route: '/'),
           AdminMenuItem(
-            icon: Icons.people, 
+            icon: Icons.category, 
             title: 'Categories', 
             //route: '/categories',
             children: [
@@ -64,7 +66,7 @@ class _TrialState extends State<Trial> {
             ]
           ),
           AdminMenuItem(
-            icon: Icons.people, 
+            icon: Icons.production_quantity_limits, 
             title: 'Products', 
             //route: '/products',
             children: [
@@ -73,7 +75,7 @@ class _TrialState extends State<Trial> {
             ]
           ),
           AdminMenuItem(
-            icon: Icons.people, 
+            icon: Icons.menu, 
             title: 'Orders', 
             //route: '/orders',
             children: [
@@ -87,6 +89,15 @@ class _TrialState extends State<Trial> {
             //route: '/customers'
             children: [
               AdminMenuItem(title: 'Customers List', route: '/customers/list'),
+            ]
+          ),
+          AdminMenuItem(
+            icon: Icons.people, 
+            title: 'Users', 
+            //route: '/orders',
+            children: [
+              AdminMenuItem(title: 'Users ', route: '/users/list'),
+              AdminMenuItem(title: 'Add User', route: '/users/add'),
             ]
           ),
           AdminMenuItem(icon: Icons.settings, title: 'Settings', route: '/settings'),
@@ -137,7 +148,18 @@ class _TrialState extends State<Trial> {
               pageBuilder: (context, animation, secondaryAnimation) => CustomersPageList(),
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
             );
+          }else if (menu.name == '/users/list') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => UsersListPage(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
+          }else if (menu.name == '/users/add') {
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => AddUser(),
+              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
+            );
           }
+
           // Add more routes for other admin menu items
           // ...
 

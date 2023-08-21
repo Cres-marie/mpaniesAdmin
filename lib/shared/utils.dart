@@ -15,6 +15,15 @@ const orange = Color.fromRGBO(251, 137, 13, 1);
 const green = Color.fromRGBO(51, 173, 127, 1);
 const red = Colors.red;
 
+const kMaxWidth = 1232.0;
+const kPadding = 20.0;
+const kPrimaryColor = Color.fromARGB(255, 228, 229, 230); //primary color of our website
+const kSecondaryColorPink = Color(0xFFFF69B4); //secondary colors
+const k2SecondaryGold = Color(0xFFFFD700);
+const kTertiaryPeach = Color(0xFFFFDAB9); //tertiary colors
+const k2TertiaryColor = Color(0xFFD3D3D3);
+const k3TertiaryPale = Color(0xFFFFC0CB);
+
 // Default App Padding
 const appPadding = 16.0;
 

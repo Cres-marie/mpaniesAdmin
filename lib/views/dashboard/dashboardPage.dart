@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/views/dashboard/widgets/activityCards.dart';
-import 'package:mpanies_admin/views/dashboard/widgets/barGraph.dart';
 import 'package:mpanies_admin/views/dashboard/widgets/barIncome.dart';
 import 'package:mpanies_admin/views/dashboard/widgets/recentOrdersSummary.dart';
 import 'package:mpanies_admin/views/dashboard/widgets/sample.dart';
@@ -26,10 +25,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
             children: [
               ActivityCard(),
               SizedBox(height: 20,),
-              LineChartSample2(),
+              //LineChartSample2(),
               //BarGraphIncome(),
-              BarChartSample2(),
-              //BarChartCopmponent(),
+              //BarChartSample2(),
+              
               //SizedBox(height: 20,),
               Responsive.isMobile(context) // Check if the screen is mobile
                   ? SingleChildScrollView(

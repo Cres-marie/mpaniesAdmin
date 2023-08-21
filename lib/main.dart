@@ -10,6 +10,8 @@ import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/trial.dart';
 import 'package:mpanies_admin/views/customers/customersPageList.dart';
 import 'package:mpanies_admin/views/settings_page.dart';
+import 'package:mpanies_admin/views/users/usersListPage.dart';
+import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +34,9 @@ class MyApp extends StatelessWidget {
         '/products/add': (context) => AddProduct(), // Add Product Page
         '/orders/list': (context) => OrdersListPage(), // Orders List Page
         '/orders/details': (context) => ViewOrderDetails(), // Orders Page
-        '/customers/list': (context) => CustomersPageList(), // Users page
+        '/customers/list': (context) => CustomersPageList(), // Customers page
+        '/users/list': (context) => UsersListPage(), // users List Page
+        '/users/add': (context) => AddUser(), // Add User Page
         '/settings': (context) => SettingsPage(), // Settings page
       },
     );
