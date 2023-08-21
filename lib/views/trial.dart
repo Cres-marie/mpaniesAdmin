@@ -112,10 +112,10 @@ class _TrialState extends State<Trial> {
         selectedRoute: '/',
         onSelected: (item) {
           if (item.route == '/logout') {
-    _handleLogout(); // Call the logout function
-  } else {
-    _navigatorKey.currentState?.pushNamed(item.route!);
-  }
+            _handleLogout(); // Call the logout function
+          } else {
+            _navigatorKey.currentState?.pushNamed(item.route!);
+          }
         },
       ),
       body: Navigator(
