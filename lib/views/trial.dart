@@ -59,7 +59,7 @@ class _TrialState extends State<Trial> {
             //route: '/categories',
             children: [
                 AdminMenuItem(title: 'Categories List', route: '/categories/list'),
-                AdminMenuItem(title: 'Add Category', route: '/categories/add'),
+                //AdminMenuItem(title: 'Add Category', route: '/categories/add'),
 
             ]
           ),

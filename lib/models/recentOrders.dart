@@ -7,6 +7,7 @@ class RecentOrder {
   final String date;
   final String total;
   final String paid;
+  final String paymentMethod;
   final int items;
 
   RecentOrder({
@@ -18,6 +19,7 @@ class RecentOrder {
     required this.date, 
     required this.total,
     required this.paid,
+    required this.paymentMethod,
     required this.items
   });
 }
@@ -33,6 +35,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'yes',
+    paymentMethod: 'paypal',
     items: 3 
 
   ),
@@ -45,6 +48,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'No',
+    paymentMethod: 'Mobile Money',
     items: 2 
   ),
   RecentOrder(
@@ -56,6 +60,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
+    paymentMethod: 'MasterCard',
     items: 6 
   ),
   RecentOrder(
@@ -67,6 +72,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
+    paymentMethod: 'Visa',
     items: 1
   ),
   RecentOrder(
@@ -78,6 +84,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Yes',
+    paymentMethod: 'Visa',
     items: 4 
   ),
 
@@ -90,6 +97,7 @@ final List<RecentOrder> recentOrders =[
     date: "01-03-2023",
     total: "\$30009.0",
     paid: 'Partially',
+    paymentMethod: 'Visa',
     items: 2 
   ),
   

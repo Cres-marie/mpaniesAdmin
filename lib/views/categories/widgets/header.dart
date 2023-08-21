@@ -78,31 +78,31 @@ class CustomHeader extends StatelessWidget {
 }
 
 
-class CategoryHeader extends StatelessWidget {
-  const CategoryHeader({super.key});
+// class CategoryHeader extends StatelessWidget {
+//   const CategoryHeader({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return CustomHeader(
-      headerText: 'Categories',
-      buttonText: 'Add Category',
-      onTap: () {
-        // Add your onTap logic here
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return AddCategory();
-            },
-            transitionDuration: Duration(seconds: 0), // No transition duration
-          ),
-        );
-      },
-      buttonColor: Colors.yellow, // Set the button color
-      hoverColor: Colors.yellow[800]!, // Set the hover color
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomHeader(
+//       headerText: 'Categories',
+//       buttonText: 'Add Category',
+//       onTap: () {
+//         // Add your onTap logic here
+//         Navigator.push(
+//           context,
+//           PageRouteBuilder(
+//             pageBuilder: (context, animation, secondaryAnimation) {
+//               return AddCategory();
+//             },
+//             transitionDuration: Duration(seconds: 0), // No transition duration
+//           ),
+//         );
+//       },
+//       buttonColor: Colors.yellow, // Set the button color
+//       hoverColor: Colors.yellow[800]!, // Set the hover color
+//     );
+//   }
+// }
 
 
 class AddCategoryHeader extends StatelessWidget {

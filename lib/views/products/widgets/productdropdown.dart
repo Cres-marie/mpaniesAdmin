@@ -50,6 +50,12 @@ class _ProductDropDownState extends State<ProductDropDown> {
                   },
                 ),
               ),
+              TextButton(
+                onPressed: () {
+                  _showAddCategoryDialog(); // Implement this function
+                },
+                child: Text('Add New Sub Category'),
+              ),
 
               SizedBox(height: 15,),
                     
@@ -68,6 +74,12 @@ class _ProductDropDownState extends State<ProductDropDown> {
                   },
                 ),
               ),
+              TextButton(
+                onPressed: () {
+                  _showAddCategoryDialog(); // Implement this function
+                },
+                child: Text('Add New Category'),
+              ),
 
 
       
@@ -75,6 +87,37 @@ class _ProductDropDownState extends State<ProductDropDown> {
           ),
         ),
       )
+    );
+  }
+
+
+  // Function to show the dialog for adding a category
+  void _showAddCategoryDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Add New'),
+          content: TextField(
+            // Implement text field for entering category name
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                // Handle adding the category and updating state
+                Navigator.pop(context);
+              },
+              child: Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

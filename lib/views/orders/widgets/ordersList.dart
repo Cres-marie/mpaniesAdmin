@@ -46,11 +46,12 @@ class _OrdersListTableState extends State<OrdersListTable> {
               ),
             ),
             DataColumn(label: Text('Order ID')),       // Column for product Name
-            DataColumn(label: Text('Date')),    // Column for Category
+            DataColumn(label: Text('Order Date')),    // Column for Category
             DataColumn(label: Text('Customer')),
-            DataColumn(label: Text('Paid')),
-            DataColumn(label: Text('Status')),
+            //DataColumn(label: Text('Paid')),
             DataColumn(label: Text('Items')),
+            DataColumn(label: Text('Payment Method')),
+            DataColumn(label: Text('Delivery Status')),
             DataColumn(label: Text('Total')),
             DataColumn(label: Text('Actions')),    // Column for Actions
           ],
@@ -163,9 +164,10 @@ class _CategoryDataTableSource extends DataTableSource {
         DataCell(Text(recentOrders[index].id.toString())),  // Display the id
         DataCell(Text(recentOrders[index].date)), // Display the date
         DataCell(Text(recentOrders[index].customerName)), // Display the name
-        DataCell(_buildPaidCell(recentOrders[index].paid)), // Display the paid status
-        DataCell(_buildStatusCell(recentOrders[index].status)), // Display the paid status
         DataCell(Text('${recentOrders[index].items.toString()} Items')), // Display the items
+        //DataCell(_buildPaidCell(recentOrders[index].paid)), // Display the paid status
+        DataCell(Text(recentOrders[index].paymentMethod)), 
+        DataCell(_buildStatusCell(recentOrders[index].status)), // Display the paid status
         DataCell(Text(recentOrders[index].total.toString())), // Display the total
         DataCell(
           PopupMenuButton<String>(

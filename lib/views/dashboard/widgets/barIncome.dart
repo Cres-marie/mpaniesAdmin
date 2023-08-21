@@ -8,7 +8,7 @@ class BarChartSample2 extends StatefulWidget {
   BarChartSample2({super.key});
   final Color leftBarColor = contentColorYellow;
   final Color rightBarColor = contentColorRed;
-  final Color avgColor = contentColorOrange.avg(contentColorRed);
+  //final Color avgColor = contentColorOrange.avg(contentColorRed);
   @override
   State<StatefulWidget> createState() => BarChartSample2State();
 }
@@ -123,7 +123,7 @@ class BarChartSample2State extends State<BarChartSample2> {
                                 .barRods
                                 .map((rod) {
                               return rod.copyWith(
-                                  toY: avg, color: widget.avgColor);
+                                  toY: avg,);
                             }).toList(),
                           );
                         }
