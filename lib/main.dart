@@ -15,7 +15,12 @@ import 'package:mpanies_admin/views/users/usersListPage.dart';
 import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => PageStateManager(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: DashBoard(),
-      initialRoute: '/', // Set the initial route
+      initialRoute: context.watch<PageStateManager>().currentPage, // Set the initial route
       routes: {
         '/': (context) => Trial(), // Home screen
         '/categories/list': (context) => CategoryListPage(), // Category List Page

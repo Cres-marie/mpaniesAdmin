@@ -33,6 +33,9 @@ class _TrialState extends State<Trial> {
 
   void _handleLogout() {
   // Perform logout logic here, such as clearing user session or credentials
+  // Update the current page to the initial route
+  context.read<PageStateManager>().setCurrentPage('/');
+
 
   // Navigate to a fresh page (login or home page)
   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginField())); // Replace LoginPage with the appropriate page
