@@ -1,25 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class PageStateManager with ChangeNotifier {
-  String currentPage = '/'; // Initialize with the initial route
+class CurrentScreenManager {
+  static const String _keyCurrentScreen = 'current_screen';
 
-  // Create a SharedPreferences instance
-  SharedPreferences? _prefs;
-
-  Future<void> initPrefs() async {
-    _prefs = await SharedPreferences.getInstance();
-    // Read the saved current page route from SharedPreferences
-    currentPage = _prefs?.getString('currentPage') ?? '/';
-    notifyListeners();
+  static Future<void> setCurrentScreen(String route) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyCurrentScreen, route);
   }
 
-
-  void setCurrentPage(String pageRoute) {
-    currentPage = pageRoute;
-
-    // Save the current page route to SharedPreferences
-    _prefs?.setString('currentPage', currentPage);
-    notifyListeners();
+  static Future<String?> getCurrentScreen() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keyCurrentScreen);
   }
 }

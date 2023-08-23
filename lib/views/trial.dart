@@ -3,18 +3,14 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:mpanies_admin/shared/pageStateManager.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
-import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
 import 'package:mpanies_admin/views/dashboard/dashboardPage.dart';
 import 'package:mpanies_admin/views/login/loginField.dart';
-import 'package:mpanies_admin/views/orders/ordersPage.dart';
-import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
-import 'package:mpanies_admin/views/settings_page.dart';
 import 'package:mpanies_admin/views/customers/customersPageList.dart';
 import 'package:mpanies_admin/views/users/usersListPage.dart';
 import 'package:mpanies_admin/views/users/widgets/addUser.dart';
-import 'package:provider/provider.dart';
+
 
 import '../shared/utils.dart';
 import 'dashboard/widgets/profile.dart';
@@ -29,6 +25,12 @@ class Trial extends StatefulWidget {
 }
 
 class _TrialState extends State<Trial> {
+
+  @override
+  void initState() {
+    super.initState();
+    
+  }
 
   // Add a GlobalKey<NavigatorState> to manage navigation
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
@@ -117,7 +119,7 @@ class _TrialState extends State<Trial> {
           if (item.route == '/logout') {
             _handleLogout(); // Call the logout function
           } else {
-            _navigatorKey.currentState?.pushNamed(item.route!);
+          _navigatorKey.currentState?.pushNamed(item.route!);
           }
         },
       ),
