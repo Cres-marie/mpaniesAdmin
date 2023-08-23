@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/shared/pageStateManager.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
@@ -29,8 +30,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: DashBoard(),
-      initialRoute: '/' ,// Set the initial route
+      initialRoute: PageStateManager.currentPage, // Set the initial route
       routes: {
+        
         '/': (context) => Trial(), // Home screen
         '/categories/list': (context) => CategoryListPage(), // Category List Page
         '/categories/add': (context) => AddCategory(), // Add Category Page

@@ -32,7 +32,7 @@ class _TrialState extends State<Trial> {
     
   }
 
-  // Add a GlobalKey<NavigatorState> to manage navigation
+  //a GlobalKey<NavigatorState> to manage navigation
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
 
   void _handleLogout() {
@@ -119,7 +119,10 @@ class _TrialState extends State<Trial> {
           if (item.route == '/logout') {
             _handleLogout(); // Call the logout function
           } else {
+            PageStateManager.setCurrentPage(item.route!);
           _navigatorKey.currentState?.pushNamed(item.route!);
+          
+            
           }
         },
       ),
@@ -128,16 +131,19 @@ class _TrialState extends State<Trial> {
         onGenerateRoute: (menu) {
           // Handle different routes here
           if (menu.name == '/') {
+            PageStateManager.setCurrentPage('/');
             return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) => DashBoardPage(),
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
             );
           } else if (menu.name == '/categories/list') {
+            PageStateManager.setCurrentPage('/categories/list');
             return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) => CategoryListPage(),
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
             );
           } else if (menu.name == '/categories/add') {
+            
             return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) => AddCategory(),
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
