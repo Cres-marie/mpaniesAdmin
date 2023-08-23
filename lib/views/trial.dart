@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
+import 'package:mpanies_admin/shared/pageStateManager.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
@@ -13,6 +14,7 @@ import 'package:mpanies_admin/views/settings_page.dart';
 import 'package:mpanies_admin/views/customers/customersPageList.dart';
 import 'package:mpanies_admin/views/users/usersListPage.dart';
 import 'package:mpanies_admin/views/users/widgets/addUser.dart';
+import 'package:provider/provider.dart';
 
 import '../shared/utils.dart';
 import 'dashboard/widgets/profile.dart';
@@ -34,8 +36,6 @@ class _TrialState extends State<Trial> {
   void _handleLogout() {
   // Perform logout logic here, such as clearing user session or credentials
   // Update the current page to the initial route
-  context.read<PageStateManager>().setCurrentPage('/');
-
 
   // Navigate to a fresh page (login or home page)
   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginField())); // Replace LoginPage with the appropriate page
@@ -141,6 +141,7 @@ class _TrialState extends State<Trial> {
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
             );
           }else if (menu.name == '/products/list') {
+            
             return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) => ProductListPage(),
               transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds

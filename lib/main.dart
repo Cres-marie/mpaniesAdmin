@@ -16,10 +16,8 @@ import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => PageStateManager(),
-      child: MyApp(),
-    ),
+    MyApp(),
+    
   );
 }
 
@@ -31,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: DashBoard(),
-      initialRoute: context.watch<PageStateManager>().currentPage, // Set the initial route
+      initialRoute: '/' ,// Set the initial route
       routes: {
         '/': (context) => Trial(), // Home screen
         '/categories/list': (context) => CategoryListPage(), // Category List Page
