@@ -29,7 +29,6 @@ class _TrialState extends State<Trial> {
   @override
   void initState() {
     super.initState();
-    
   }
 
   //a GlobalKey<NavigatorState> to manage navigation
@@ -40,7 +39,7 @@ class _TrialState extends State<Trial> {
   // Update the current page to the initial route
 
   // Navigate to a fresh page (login or home page)
-  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginField())); // Replace LoginPage with the appropriate page
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginField())); // Replace LoginPage with the appropriate page
 }
 
   @override
@@ -48,11 +47,11 @@ class _TrialState extends State<Trial> {
     return AdminScaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text(''),
+        title: const Text(''),
         backgroundColor: Colors.white,
         
-        iconTheme: IconThemeData(color: Colors.black), // Set the menu icon color to black
-        actions: [
+        iconTheme: const IconThemeData(color: Colors.black), // Set the menu icon color to black
+        actions: const [
           Row(
             children: [
               SearchField(),
@@ -64,7 +63,7 @@ class _TrialState extends State<Trial> {
         ],
       ),
       sideBar: SideBar(
-        items: [
+        items: const [
           AdminMenuItem(icon: Icons.dashboard, title: 'Dashboard', route: '/'),
           AdminMenuItem(
             icon: Icons.category, 
@@ -114,78 +113,45 @@ class _TrialState extends State<Trial> {
           AdminMenuItem(icon: Icons.settings, title: 'Settings', route: '/settings'),
           AdminMenuItem(icon: Icons.logout, title: 'Logout', route: '/logout',),
         ],
-        selectedRoute: '/',
+        selectedRoute: PageStateManager.currentPage,
         onSelected: (item) {
           if (item.route == '/logout') {
             _handleLogout(); // Call the logout function
           } else {
-            PageStateManager.setCurrentPage(item.route!);
+            PageStateManager.currentPage = item.route!;
           _navigatorKey.currentState?.pushNamed(item.route!);
-          
-            
           }
         },
       ),
       body: Navigator(
         key: _navigatorKey,
         onGenerateRoute: (menu) {
-          // Handle different routes here
-          if (menu.name == '/') {
-            PageStateManager.setCurrentPage('/');
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => DashBoardPage(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          } else if (menu.name == '/categories/list') {
-            PageStateManager.setCurrentPage('/categories/list');
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => CategoryListPage(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          } else if (menu.name == '/categories/add') {
-            
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => AddCategory(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/products/list') {
-            
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => ProductListPage(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/products/add') {
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => AddProduct(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/orders/list') {
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => OrdersListPage(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/customers/list') {
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => CustomersPageList(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/users/list') {
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => UsersListPage(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }else if (menu.name == '/users/add') {
-            return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => AddUser(),
-              transitionDuration: Duration(seconds: 0), // Set the transition duration to 0 seconds
-            );
-          }
-          // Add more routes for other admin menu items
-          // ...
-
-          // Default route (e.g., dashboard)
-          return  MaterialPageRoute(
-            builder: (context) => Center(child: Text('Not Found')),
+          return PageRouteBuilder(
+            transitionDuration: const Duration(seconds: 0),
+            pageBuilder: (context, animation, secondaryAnimation) {
+              switch(PageStateManager.currentPage){
+                case '/':
+                  return const DashBoardPage();
+                case '/categories/list':
+                  return const CategoryListPage();
+                case '/categories/add':
+                  return const AddCategory();
+                case '/products/list':
+                  return const ProductListPage();
+                case '/products/add':
+                  return const AddProduct();
+                case '/orders/list':
+                  return const OrdersListPage();
+                case '/customers/list':
+                  return const CustomersPageList();
+                case '/users/list':
+                  return const UsersListPage();
+                case '/users/add':
+                  return const AddUser();
+                default:
+                  return const DashBoardPage();
+              }
+            },
           );
         },
       ),

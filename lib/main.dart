@@ -15,10 +15,10 @@ import 'package:mpanies_admin/views/settings_page.dart';
 import 'package:mpanies_admin/views/users/usersListPage.dart';
 import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
-void main() {
+Future<void> main() async {
+  await PageStateManager.init();
   runApp(
-    MyApp(),
-    
+    const MyApp(),
   );
 }
 
@@ -30,9 +30,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: DashBoard(),
-      initialRoute: PageStateManager.currentPage, // Set the initial route
+      initialRoute: PageStateManager.initialRoute, // Set the initial route
       routes: {
-        
         '/': (context) => Trial(), // Home screen
         '/categories/list': (context) => CategoryListPage(), // Category List Page
         '/categories/add': (context) => AddCategory(), // Add Category Page
