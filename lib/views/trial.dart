@@ -39,7 +39,8 @@ class _TrialState extends State<Trial> {
   // Update the current page to the initial route
 
   // Navigate to a fresh page (login or home page)
-  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginField())); // Replace LoginPage with the appropriate page
+  Navigator.of(context).pushReplacementNamed('/logout');
+  //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginField())); // Replace LoginPage with the appropriate page
 }
 
   @override
