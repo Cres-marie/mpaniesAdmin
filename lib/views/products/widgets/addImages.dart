@@ -27,6 +27,7 @@ class _AddImagesState extends State<AddImages> {
             
             Container(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InkWell(
                     onTap: (){},
@@ -35,8 +36,8 @@ class _AddImagesState extends State<AddImages> {
                         color: Colors.grey,
                         radius: Radius.circular(20),
                         child: Container(
-                          width: 500,
-                          height: 200,
+                          width: MediaQuery.of(context).size.width,
+                          height: 400,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -55,6 +56,7 @@ class _AddImagesState extends State<AddImages> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // The following code will display the slide images for index 1
                       for (final slideImage in productItems[1].slideImages)

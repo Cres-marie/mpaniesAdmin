@@ -33,8 +33,8 @@ class _AddVideoState extends State<AddVideo> {
                         color: Colors.grey,
                         radius: Radius.circular(20),
                         child: Container(
-                          width: 500,
-                          height: 200,
+                          width: MediaQuery.of(context).size.width,
+                          height: 400,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
