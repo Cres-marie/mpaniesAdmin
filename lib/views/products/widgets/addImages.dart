@@ -33,7 +33,7 @@ class _AddImagesState extends State<AddImages> {
                     onTap: (){},
                     child: Container(
                       child: DottedBorder(
-                        color: Colors.grey,
+                        color: k2SecondaryGold,
                         radius: Radius.circular(20),
                         child: Container(
                           width: MediaQuery.of(context).size.width,

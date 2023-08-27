@@ -52,3 +52,5 @@ const Color gridLinesColor = Color(0x11FFFFFF);
   const Color contentColorPink = Color(0xFFFF3AF2);
   const Color contentColorRed = Color(0xFFE80054);
   const Color contentColorCyan = Color(0xFF50E4FF);
+
+  const headerText = TextStyle(fontSize: 14, fontWeight: FontWeight.w500);

@@ -5,6 +5,7 @@ import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/dashboard/dashboardPage.dart';
 import 'package:mpanies_admin/views/login/loginField.dart';
+import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 import 'package:mpanies_admin/views/products/productListPage.dart';
 import 'package:mpanies_admin/views/products/widgets/addProduct.dart';
 import 'package:mpanies_admin/views/customers/customersPageList.dart';
@@ -143,6 +144,8 @@ class _TrialState extends State<Trial> {
                   return const AddProduct();
                 case '/orders/list':
                   return const OrdersListPage();
+                case '/orders/details':
+                  return const ViewOrderDetails();
                 case '/customers/list':
                   return const CustomersPageList();
                 case '/users/list':

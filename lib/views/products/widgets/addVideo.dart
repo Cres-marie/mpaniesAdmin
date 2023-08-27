@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class AddVideo extends StatefulWidget {
   const AddVideo({super.key});
@@ -30,7 +31,7 @@ class _AddVideoState extends State<AddVideo> {
                     onTap: (){},
                     child: Container(
                       child: DottedBorder(
-                        color: Colors.grey,
+                        color: k2SecondaryGold,
                         radius: Radius.circular(20),
                         child: Container(
                           width: MediaQuery.of(context).size.width,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 import '../../../models/categoriesItems.dart'; // Import your data model
 
 class CategoryListTable extends StatefulWidget {
@@ -40,9 +41,9 @@ class _CategoryListTableState extends State<CategoryListTable> {
                 },
               ),
             ),
-            DataColumn(label: Text('Category Name')),
-            DataColumn(label: Text('Sub Categories No ')),
-            DataColumn(label: Text('Actions')),
+            DataColumn(label: Text('Category Name', style: headerText,)),
+            DataColumn(label: Text('Sub Categories No', style: headerText)),
+            DataColumn(label: Text('Actions', style: headerText)),
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
           rowsPerPage: brand.length > 10 ? 10 : brand.length,
