@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/views/products/widgets/addImages.dart';
+import 'package:mpanies_admin/views/products/widgets/addVideo.dart';
 import 'package:mpanies_admin/views/products/widgets/pricing.dart';
 import 'package:mpanies_admin/views/products/widgets/productDetails.dart';
 import 'package:mpanies_admin/views/products/widgets/productStock.dart';
@@ -96,8 +97,44 @@ class _AddProductState extends State<AddProduct> {
             ProductStock(),
 
             SizedBox(height: 20,),
+            if (Responsive.isDesktop(context))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: AddImages()
+                ),
+                SizedBox(width: 20,),
+                Container(
+                  width: MediaQuery.of(context).size.width/4,
+                )
+              ],
+            ),
 
-            AddImages()
+            SizedBox(height: 20,),
+
+            if (!Responsive.isDesktop(context))
+            AddImages(),
+
+            SizedBox(height: 20,),
+            if (Responsive.isDesktop(context))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: AddVideo()
+                ),
+                SizedBox(width: 20,),
+                Container(
+                  width: MediaQuery.of(context).size.width/4,
+                )
+              ],
+            ),
+
+            if (!Responsive.isDesktop(context))
+            AddVideo(),
           
           ]
         ),

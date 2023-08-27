@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_admin/views/dashboard/dashboardPage.dart';
 import 'package:mpanies_admin/views/trial.dart';
 
@@ -32,6 +33,8 @@ class LoginField extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
+                      Center(child: SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),)),
                       
                       Text('Login', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20, ) ),
 
@@ -62,30 +65,7 @@ class LoginField extends StatelessWidget {
                     
                       SizedBox(height: 20,),
                     
-                      // Text('Email', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
-                      // SizedBox(height: 10,),  
-                      // TextFormField(
-                      //   decoration: InputDecoration(
-                      //     contentPadding: const EdgeInsets.all(16),
-                      //     enabledBorder: OutlineInputBorder(
-                      //       borderSide: const BorderSide(
-                      //         color: Colors.grey,
-                      //         //width: 3,
-                      //       ),
-                      //       borderRadius: BorderRadius.circular(10),
-                      //     ),
-                      //     focusedBorder: OutlineInputBorder(
-                      //       borderSide: const BorderSide(
-                      //         color: Colors.black,
-                      //         //width: 3,
-                      //       ),
-                      //       borderRadius: BorderRadius.circular(10),
-                      //     ),
-                      //     //hintText: 'Email',
-                      //   ),
-                      // ),
-                    
-                      // SizedBox(height: 20,),
+                      
                     
                       Text('Password', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
                       SizedBox(height: 10,),  
@@ -117,13 +97,9 @@ class LoginField extends StatelessWidget {
                         width: 400,
                         child: ElevatedHoverButton(
                           text: 'Sign In',
-                          defaultColor: Colors.black,
-                          hoverColor: k2SecondaryGold,
+                          
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Trial()),
-                            ); // Navigate back to the previous page
+                              Navigator.of(context).pushReplacementNamed('/');
                           },
                                     //icon: Icons.lock,
                         ),

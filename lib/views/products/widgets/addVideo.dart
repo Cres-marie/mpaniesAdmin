@@ -2,16 +2,14 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
 
-import '../../../shared/utils.dart';
-
-class AddImages extends StatefulWidget {
-  const AddImages({super.key});
+class AddVideo extends StatefulWidget {
+  const AddVideo({super.key});
 
   @override
-  State<AddImages> createState() => _AddImagesState();
+  State<AddVideo> createState() => _AddVideoState();
 }
 
-class _AddImagesState extends State<AddImages> {
+class _AddVideoState extends State<AddVideo> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,7 +20,7 @@ class _AddImagesState extends State<AddImages> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
                     
-            Text('Add Images', style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18, )),
+            Text('Add Video', style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18, )),
             SizedBox(height: 12,),  
             
             Container(
@@ -42,7 +40,7 @@ class _AddImagesState extends State<AddImages> {
                             children: [
                               Icon(Icons.upload,size: 48,color: Colors.grey,),
                               SizedBox(height: 10),
-                              Text('Upload Image',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.grey,),
+                              Text('Upload Video',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.grey,),
                               ),
                             ],
                           ),

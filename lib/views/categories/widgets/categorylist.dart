@@ -41,7 +41,7 @@ class _CategoryListTableState extends State<CategoryListTable> {
               ),
             ),
             DataColumn(label: Text('Category Name')),
-            DataColumn(label: Text('Item Number')),
+            DataColumn(label: Text('Sub Categories No ')),
             DataColumn(label: Text('Actions')),
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),

@@ -10,6 +10,7 @@ class ProductItem {
   final String category;
   final String subCategory;
   final String images;
+  final List<String> slideImages;
 
   ProductItem({
     required this.id,
@@ -22,6 +23,7 @@ class ProductItem {
     required this.category,
     required this.subCategory,
     required this.images,
+    required this.slideImages
   });
 
 }
@@ -38,12 +40,16 @@ final List<ProductItem> productItems = [
       category: 'Skin Care',
       subCategory: 'Moisteurizer',
       images: 'assets/images/makeup1.jpg',
-      
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
 
     ProductItem(
-      id : 1,
+      id : 2,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -53,10 +59,15 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup8.jpg',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
     ProductItem(
-      id : 1,
+      id : 3,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -66,10 +77,15 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup6.jpg',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
     ProductItem(
-      id : 1,
+      id : 4,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -79,10 +95,15 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup4.jpg',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
     ProductItem(
-      id : 1,
+      id : 5,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -92,10 +113,15 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup3.jpg',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
     ProductItem(
-      id : 1,
+      id : 6,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -105,6 +131,11 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/makeup7.jpg',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
 ];

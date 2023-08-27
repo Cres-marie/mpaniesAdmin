@@ -14,6 +14,7 @@ const purple = Color.fromRGBO(165, 80, 179, 1);
 const orange = Color.fromRGBO(251, 137, 13, 1);
 const green = Color.fromRGBO(51, 173, 127, 1);
 const red = Colors.red;
+const buttonColor = Color(0xFF1B5E20);
 
 const kMaxWidth = 1232.0;
 const kPadding = 20.0;

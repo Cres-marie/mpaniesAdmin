@@ -35,30 +35,6 @@ class _ProductDropDownState extends State<ProductDropDown> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Text('SubCategory', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
-              SizedBox(height: 12,),  
-              Container(
-                child: DropdownButtonFormField<String>(
-                  items: subCategories.map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                          // Handle brand selection
-                  },
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  _showAddCategoryDialog(); // Implement this function
-                },
-                child: Text('Add New Sub Category'),
-              ),
-
-              SizedBox(height: 15,),
-                    
               Text('Category', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
               SizedBox(height: 12,),  
               Container(
@@ -81,6 +57,34 @@ class _ProductDropDownState extends State<ProductDropDown> {
                 child: Text('Add New Category'),
               ),
 
+              SizedBox(height: 15,),
+
+
+              Text('SubCategory', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
+              SizedBox(height: 12,),  
+              Container(
+                child: DropdownButtonFormField<String>(
+                  items: subCategories.map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                          // Handle brand selection
+                  },
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  _showAddCategoryDialog(); // Implement this function
+                },
+                child: Text('Add New Sub Category'),
+              ),
+
+              
+                    
+              
 
       
             ],
