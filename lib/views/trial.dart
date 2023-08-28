@@ -3,6 +3,7 @@ import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:mpanies_admin/shared/pageStateManager.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
+import 'package:mpanies_admin/views/customers/widgets/viewCustomerDetails.dart';
 import 'package:mpanies_admin/views/dashboard/dashboardPage.dart';
 import 'package:mpanies_admin/views/login/loginField.dart';
 import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
@@ -101,6 +102,7 @@ class _TrialState extends State<Trial> {
             //route: '/customers'
             children: [
               AdminMenuItem(title: 'Customers List', route: '/customers/list'),
+              AdminMenuItem(title: 'Customers Details', route: '/customers/details'),
             ]
           ),
           AdminMenuItem(
@@ -148,6 +150,8 @@ class _TrialState extends State<Trial> {
                   return const ViewOrderDetails();
                 case '/customers/list':
                   return const CustomersPageList();
+                case '/customers/details':
+                  return const ViewCustomerDetails();
                 case '/users/list':
                   return const UsersListPage();
                 case '/users/add':

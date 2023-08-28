@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/recentOrders.dart';
+import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 
 class OrdersListTable extends StatefulWidget {
   const OrdersListTable({super.key});
@@ -55,7 +56,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
             DataColumn(label: Text('Total Spent')),
             DataColumn(label: Text('Actions')),    // Column for Actions
           ],
-          source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
+          source: _CategoryDataTableSource(context, selectedRows, _updateSelectedRow),
           rowsPerPage: recentOrders.length > 10 ?  10 : recentOrders.length , // Number of rows to display per page
           //emptyRowCount: 0, // Set the number of empty rows to 0
           // Increase the height of data cells
@@ -69,8 +70,9 @@ class _OrdersListTableState extends State<OrdersListTable> {
 class _CategoryDataTableSource extends DataTableSource {
   final List<bool> selectedRows;
   final Function(int, bool) updateSelectedRow; // Callback function
+  final BuildContext context;
 
-  _CategoryDataTableSource(this.selectedRows, this.updateSelectedRow);
+  _CategoryDataTableSource(this.context, this.selectedRows, this.updateSelectedRow);
 
   // Custom method to determine the appearance of the "Paid" cell
   Widget _buildPaidCell(String paid) {
@@ -175,7 +177,15 @@ class _CategoryDataTableSource extends DataTableSource {
               if (value == 'edit') {
                 // Perform edit action
               } else if (value == 'view') {
-                
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return ViewOrderDetails();
+                      },
+                      transitionDuration: Duration(seconds: 0), // No transition duration
+                    ),
+                  );
               } else if (value == 'delete') {
                 // Perform delete action
               }

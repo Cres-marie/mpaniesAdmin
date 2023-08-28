@@ -3,6 +3,7 @@ import 'package:mpanies_admin/shared/pageStateManager.dart';
 import 'package:mpanies_admin/views/categories/categoryListPage.dart';
 import 'package:mpanies_admin/views/categories/widgets/addCategory.dart';
 import 'package:mpanies_admin/views/categories/widgets/categorylist.dart';
+import 'package:mpanies_admin/views/customers/widgets/viewCustomerDetails.dart';
 import 'package:mpanies_admin/views/login/loginField.dart';
 import 'package:mpanies_admin/views/orders/ordersListPage.dart';
 import 'package:mpanies_admin/views/orders/ordersPage.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/orders/list': (context) => OrdersListPage(), // Orders List Page
         '/orders/details': (context) => ViewOrderDetails(), // Orders Page
         '/customers/list': (context) => CustomersPageList(), // Customers page
+        '/customers/details': (context) => ViewCustomerDetails(), // customer details Page
         '/users/list': (context) => UsersListPage(), // users List Page
         '/users/add': (context) => AddUser(), // Add User Page
         '/settings': (context) => SettingsPage(), // Settings page

@@ -55,7 +55,7 @@ class _OrdersItemState extends State<OrdersItem> {
               DataCell(Text('Total', style: TextStyle(fontWeight: FontWeight.bold))),
               DataCell(Text('')), // Empty cells for other columns
               DataCell(Text('')),
-              DataCell(Text('')),
+              DataCell(Text('\$2000')),
               //DataCell(Text(productItems[index].total, style: TextStyle(fontWeight: FontWeight.bold))),
             ],
             ),

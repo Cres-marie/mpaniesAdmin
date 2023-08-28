@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/views/customers/widgets/viewCustomerDetails.dart';
 
 import '../../../models/recentOrders.dart';
 
@@ -52,7 +53,7 @@ class _CustomerListTableState extends State<CustomerListTable> {
             DataColumn(label: Text('Spent')),
             DataColumn(label: Text('Actions')),    // Column for Actions
           ],
-          source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
+          source: _CategoryDataTableSource(context, selectedRows, _updateSelectedRow),
           rowsPerPage: recentOrders.length > 10 ?  10 : recentOrders.length , // Number of rows to display per page
           //emptyRowCount: 0, // Set the number of empty rows to 0
           // Increase the height of data cells
@@ -66,8 +67,9 @@ class _CustomerListTableState extends State<CustomerListTable> {
 class _CategoryDataTableSource extends DataTableSource {
   final List<bool> selectedRows;
   final Function(int, bool) updateSelectedRow; // Callback function
+  final BuildContext context;
 
-  _CategoryDataTableSource(this.selectedRows, this.updateSelectedRow);
+  _CategoryDataTableSource(this.context,this.selectedRows, this.updateSelectedRow);
 
   
   @override
@@ -104,6 +106,16 @@ class _CategoryDataTableSource extends DataTableSource {
             onSelected: (value) {
               if (value == 'edit') {
                 // Perform edit action
+              } else if (value == 'view') {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return ViewCustomerDetails();
+                      },
+                      transitionDuration: Duration(seconds: 0), // No transition duration
+                    ),
+                  );
               } else if (value == 'delete') {
                 // Perform delete action
               }
@@ -112,6 +124,10 @@ class _CategoryDataTableSource extends DataTableSource {
               PopupMenuItem<String>(
                 value: 'edit',
                 child: Text('Edit'),   // Option to edit the category
+              ),
+              PopupMenuItem<String>(
+                value: 'view',
+                child: Text('View'),   // Option to edit the category
               ),
               PopupMenuItem<String>(
                 value: 'delete',
