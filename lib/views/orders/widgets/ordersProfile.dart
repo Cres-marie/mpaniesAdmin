@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class OrdersProfile extends StatefulWidget {
   const OrdersProfile({super.key});
@@ -18,7 +19,7 @@ class _OrdersProfileState extends State<OrdersProfile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [                    
-            Text('Customer', style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14, )),
+            Text('Customer', style: headerText ),
             SizedBox(height: 15,),
             Column(
               children: [

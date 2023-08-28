@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/recentOrders.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 import 'package:mpanies_admin/views/orders/widgets/viewOrderDetails.dart';
 
 class OrdersListTable extends StatefulWidget {
@@ -46,15 +47,15 @@ class _OrdersListTableState extends State<OrdersListTable> {
                 },
               ),
             ),
-            DataColumn(label: Text('Order ID')),       // Column for product Name
-            DataColumn(label: Text('Order Date')),    // Column for Category
-            DataColumn(label: Text('Customer')),
+            DataColumn(label: Text('Order ID',style: headerText)),       // Column for product Name
+            DataColumn(label: Text('Order Date',style: headerText)),    // Column for Category
+            DataColumn(label: Text('Customer',style: headerText)),
             //DataColumn(label: Text('Paid')),
-            DataColumn(label: Text('Items')),
-            DataColumn(label: Text('Payment Method')),
-            DataColumn(label: Text('Delivery Status')),
-            DataColumn(label: Text('Total Spent')),
-            DataColumn(label: Text('Actions')),    // Column for Actions
+            DataColumn(label: Text('Items',style: headerText)),
+            DataColumn(label: Text('Payment Method',style: headerText)),
+            DataColumn(label: Text('Delivery Status',style: headerText)),
+            DataColumn(label: Text('Total Spent',style: headerText)),
+            DataColumn(label: Text('Actions',style: headerText)),    // Column for Actions
           ],
           source: _CategoryDataTableSource(context, selectedRows, _updateSelectedRow),
           rowsPerPage: recentOrders.length > 10 ?  10 : recentOrders.length , // Number of rows to display per page

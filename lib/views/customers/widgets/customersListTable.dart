@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 import 'package:mpanies_admin/views/customers/widgets/viewCustomerDetails.dart';
 
 import '../../../models/recentOrders.dart';
@@ -47,11 +48,11 @@ class _CustomerListTableState extends State<CustomerListTable> {
                 },
               ),
             ),
-            DataColumn(label: Text('Name')),       // Column for product Name
-            DataColumn(label: Text('Registered')),    // Column for Category
-            DataColumn(label: Text('Country')),
-            DataColumn(label: Text('Spent')),
-            DataColumn(label: Text('Actions')),    // Column for Actions
+            DataColumn(label: Text('Name',style: headerText)),       // Column for product Name
+            DataColumn(label: Text('Registered',style: headerText)),    // Column for Category
+            DataColumn(label: Text('Country',style: headerText)),
+            DataColumn(label: Text('Spent',style: headerText)),
+            DataColumn(label: Text('Actions',style: headerText)),    // Column for Actions
           ],
           source: _CategoryDataTableSource(context, selectedRows, _updateSelectedRow),
           rowsPerPage: recentOrders.length > 10 ?  10 : recentOrders.length , // Number of rows to display per page

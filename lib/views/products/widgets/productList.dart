@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class ProductsListTable extends StatefulWidget {
   const ProductsListTable({super.key});
@@ -46,11 +47,11 @@ class _ProductsListTableState extends State<ProductsListTable> {
                 },
               ),
             ),
-            DataColumn(label: Text('Product')),       // Column for product Name
-            DataColumn(label: Text('Category')),    // Column for Category
-            DataColumn(label: Text('Stock')),
-            DataColumn(label: Text('Price')),
-            DataColumn(label: Text('Actions')),    // Column for Actions
+            DataColumn(label: Text('Product',style: headerText)),       // Column for product Name
+            DataColumn(label: Text('Category',style: headerText)),    // Column for Category
+            DataColumn(label: Text('Stock',style: headerText)),
+            DataColumn(label: Text('Price',style: headerText)),
+            DataColumn(label: Text('Actions',style: headerText)),    // Column for Actions
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
           rowsPerPage: productItems.length > 10 ?  10 : productItems.length , // Number of rows to display per page

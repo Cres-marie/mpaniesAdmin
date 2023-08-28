@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class CustomerProfile extends StatefulWidget {
   const CustomerProfile({super.key});
@@ -51,7 +52,7 @@ class _CustomerProfileState extends State<CustomerProfile> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Registered Date', style: TextStyle(fontWeight: FontWeight.bold),),
+                Text('Registered Date',style: headerText),
                 Text("01-03-2023")
               ],
             ),
@@ -60,7 +61,8 @@ class _CustomerProfileState extends State<CustomerProfile> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Address', style: TextStyle(fontWeight: FontWeight.bold),),
+                Text('Address', style: headerText),
+                SizedBox(height: 5,),
                 Text("Kampala")
               ],
             ),
@@ -70,7 +72,8 @@ class _CustomerProfileState extends State<CustomerProfile> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('Last Order', style: TextStyle(fontWeight: FontWeight.bold),),
+                Text('Last Order', style: headerText),
+                SizedBox(height: 5,),
                 Text("01-03-2023")
               ],
             )

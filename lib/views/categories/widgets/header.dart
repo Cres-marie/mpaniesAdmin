@@ -197,57 +197,7 @@ class AddProductHeader extends StatelessWidget {
   }
 }
 
-class OrdersHeader extends StatelessWidget {
-  const OrdersHeader({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return CustomHeader(
-      headerText: 'Orders',
-      buttonText: 'View Order Details',
-      onTap: () {
-        // Add your onTap logic here
-        Navigator.pushReplacement(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return ViewOrderDetails();
-            },
-            transitionDuration: Duration(seconds: 0), // No transition duration
-          ),
-        );
-      },
-      buttonColor: Colors.yellow, // Set the button color
-      hoverColor: Colors.yellow[800]!, // Set the hover color
-    );
-  }
-}
-
-class CustomerHeader extends StatelessWidget {
-  const CustomerHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomHeader(
-      headerText: 'Customers',
-      buttonText: 'Customer Details',
-      onTap: () {
-        // Add your onTap logic here
-        // Navigator.push(
-        //   context,
-        //   PageRouteBuilder(
-        //     pageBuilder: (context, animation, secondaryAnimation) {
-        //       return AddProduct();
-        //     },
-        //     transitionDuration: Duration(seconds: 0), // No transition duration
-        //   ),
-        // );
-      },
-      buttonColor: Colors.yellow, // Set the button color
-      hoverColor: Colors.yellow[800]!, // Set the hover color
-    );
-  }
-}
 
 
 class UsersHeader extends StatelessWidget {

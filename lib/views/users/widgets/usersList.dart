@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/users.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class UsersList extends StatefulWidget {
   const UsersList({super.key});
@@ -40,13 +41,13 @@ class _UsersListState extends State<UsersList> {
                 },
               ),
             ),
-            DataColumn(label: Text('UserName')),
-            DataColumn(label: Text('Password ')),
-            DataColumn(label: Text('Email')),
-            DataColumn(label: Text('Role')),
-            DataColumn(label: Text('Date Registered')),
-            DataColumn(label: Text('Last Login')),
-            DataColumn(label: Text('Actions')),
+            DataColumn(label: Text('UserName',style: headerText)),
+            DataColumn(label: Text('Password ',style: headerText)),
+            DataColumn(label: Text('Email',style: headerText)),
+            DataColumn(label: Text('Role',style: headerText)),
+            DataColumn(label: Text('Date Registered',style: headerText)),
+            DataColumn(label: Text('Last Login',style: headerText)),
+            DataColumn(label: Text('Actions',style: headerText)),
           ],
           source: _CategoryDataTableSource(selectedRows, _updateSelectedRow),
           rowsPerPage: userdetails.length > 10 ? 10 : userdetails.length,

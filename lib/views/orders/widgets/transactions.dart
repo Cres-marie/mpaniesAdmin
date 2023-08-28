@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class Transaction extends StatefulWidget {
   const Transaction({super.key});
@@ -19,7 +20,7 @@ class _TransactionState extends State<Transaction> {
         child: DataTable(
           dataRowMaxHeight: 50.0,
           columns: [
-            DataColumn(label: Text('Transactions')),
+            DataColumn(label: Text('Transactions',style: headerText)),
             
           ],
           rows: productItems.take(3).map((item) {

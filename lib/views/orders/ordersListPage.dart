@@ -19,7 +19,7 @@ class _OrdersListPageState extends State<OrdersListPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OrdersHeader(),
+            Text('Orders', style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),),
             SizedBox(height: 20,),
             OrdersListTable()
           ],

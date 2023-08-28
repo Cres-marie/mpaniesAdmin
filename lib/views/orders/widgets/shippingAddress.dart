@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/models/productItems.dart';
+import 'package:mpanies_admin/shared/utils.dart';
 
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
@@ -18,7 +19,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [                    
-            Text('Shipping Address', style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14, )),
+            Text('Shipping Address', style: headerText),
             SizedBox(height: 15,),
             Column(
               children: [

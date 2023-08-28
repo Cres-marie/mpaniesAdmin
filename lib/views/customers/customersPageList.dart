@@ -18,7 +18,7 @@ class _CustomersPageListState extends State<CustomersPageList> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomerHeader(),
+            Text('Customers', style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),),
             SizedBox(height: 20,),
             CustomerListTable()
           ],

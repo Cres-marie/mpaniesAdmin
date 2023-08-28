@@ -50,6 +50,19 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                   ),
                 )
               ],
+            ),
+
+            if (!Responsive.isDesktop(context))
+            Column(
+              children: [
+                OrdersProfile(),
+                SizedBox(height: 15,),
+                OrdersItem(),
+                SizedBox(height: 15,),
+                ShippingAddress(),
+                SizedBox(height: 15,),
+                Transaction()
+              ],
             )
           ],
         ),

@@ -48,6 +48,15 @@ class _ViewCustomerDetailsState extends State<ViewCustomerDetails> {
                   ),
                 )
               ],
+            ),
+
+            if (!Responsive.isDesktop(context))
+            Column(
+              children: [
+                CustomerProfile(),
+                SizedBox(height: 15,),
+                CustomersOrderList()
+              ],
             )
           ],
         ),
