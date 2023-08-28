@@ -19,10 +19,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //CategoryHeader(),
-            Text('Categories', style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),),
+            Text('Categories', style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,),),
             SizedBox(height: 20,),
             CategoryListTable()
           ],

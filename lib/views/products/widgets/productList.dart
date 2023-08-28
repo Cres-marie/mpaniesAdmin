@@ -115,6 +115,7 @@ class _CategoryDataTableSource extends DataTableSource {
                 height: 100, width: 120,
                 child: Image.asset(productItems[index].images, height: 50, width: 100, fit: BoxFit.cover)
               ),
+              SizedBox(width: 5,),
               Text(productItems[index].title)
             ],
           )

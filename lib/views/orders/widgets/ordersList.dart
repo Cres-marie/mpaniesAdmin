@@ -174,6 +174,8 @@ class _CategoryDataTableSource extends DataTableSource {
             onSelected: (value) {
               if (value == 'edit') {
                 // Perform edit action
+              } else if (value == 'view') {
+                
               } else if (value == 'delete') {
                 // Perform delete action
               }
@@ -182,6 +184,10 @@ class _CategoryDataTableSource extends DataTableSource {
               PopupMenuItem<String>(
                 value: 'edit',
                 child: Text('Edit'),   // Option to edit the category
+              ),
+              PopupMenuItem<String>(
+                value: 'view',
+                child: Text('View'),   // Option to edit the category
               ),
               PopupMenuItem<String>(
                 value: 'delete',
