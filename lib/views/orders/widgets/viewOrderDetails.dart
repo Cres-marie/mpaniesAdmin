@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_admin/shared/responsive.dart';
 import 'package:mpanies_admin/views/orders/widgets/ordersItemList.dart';
 import 'package:mpanies_admin/views/orders/widgets/ordersProfile.dart';
+import 'package:mpanies_admin/views/orders/widgets/shippingAddress.dart';
+import 'package:mpanies_admin/views/orders/widgets/transactions.dart';
 
 class ViewOrderDetails extends StatefulWidget {
   const ViewOrderDetails({super.key});
@@ -30,15 +32,20 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                   flex: 2,
                   child: Column(
                     children: [
-                      OrdersItem()
-                
+                      OrdersItem(),
+                      SizedBox(height: 15,),
+                      Transaction()
                     ],
                   ),
                 ),
+                SizedBox(width: 18,),
                 Expanded(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      OrdersProfile()
+                      OrdersProfile(),
+                      SizedBox(height: 15,),
+                      ShippingAddress()
                     ],
                   ),
                 )
