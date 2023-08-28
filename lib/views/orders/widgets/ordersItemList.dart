@@ -50,8 +50,7 @@ class _OrdersItemState extends State<OrdersItem> {
                               Text(productItems[index].price.toString()),
                             ],
                           ),
-                        )
-                        
+                        )                        
                       ],
                     ),
                   )
