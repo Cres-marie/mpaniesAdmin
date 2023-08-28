@@ -17,7 +17,7 @@ class _OrdersItemState extends State<OrdersItem> {
         elevation: 2,
         color: Colors.white,
         child: DataTable(
-          //dataRowMaxHeight: 12.0,
+          dataRowMaxHeight: 100.0,
           columns: [
             DataColumn(label: Text('Items')),
             DataColumn(label: Text('Price')), 
@@ -30,11 +30,11 @@ class _OrdersItemState extends State<OrdersItem> {
               cells: [
                 DataCell(
                   Container(
-                    height: 120,
+                    //height: 120,
                     child: Row(
                       children: [
                         Container(
-                          height: 100, width: 120,
+                          height: 80, width: 120,
                           child: Image.asset(productItems[index].images, height: 50, width: 100, fit: BoxFit.cover)
                         ),
                         Text(productItems[index].title),

@@ -14,10 +14,10 @@ class _TransactionState extends State<Transaction> {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Card(
-        elevation: 2,
+        elevation: 5,
         color: Colors.white,
         child: DataTable(
-          //dataRowMaxHeight: 12.0,
+          dataRowMaxHeight: 50.0,
           columns: [
             DataColumn(label: Text('Transactions')),
             
