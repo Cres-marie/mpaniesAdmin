@@ -60,7 +60,7 @@ class _AddVideoState extends State<AddVideo> {
                       Stack(
                         children: [
                           Container(
-                            width: 100,
+                            width: 80,
                             height: 100,
                             decoration: BoxDecoration(
                               border: Border.all(

@@ -63,7 +63,7 @@ class _AddImagesState extends State<AddImages> {
                       Stack(
                         children: [
                           Container(
-                            width: 100,
+                            width: 80,
                             height: 100,
                             decoration: BoxDecoration(
                               border: Border.all(

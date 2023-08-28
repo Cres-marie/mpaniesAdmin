@@ -17,7 +17,9 @@ import 'package:mpanies_admin/views/users/usersListPage.dart';
 import 'package:mpanies_admin/views/users/widgets/addUser.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await PageStateManager.init();
+  
   runApp(
     const MyApp(),
   );
