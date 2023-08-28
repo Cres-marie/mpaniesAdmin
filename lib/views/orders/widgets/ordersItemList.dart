@@ -20,8 +20,12 @@ class _OrdersItemState extends State<OrdersItem> {
           //dataRowMaxHeight: 12.0,
           columns: [
             DataColumn(label: Text('Items')),
+            DataColumn(label: Text('Price')), 
+            DataColumn(label: Text('Quantity')),    
+            DataColumn(label: Text('Shipping Cost')),
           ],
-          rows: List<DataRow>.generate(productItems.length, (index) {
+          rows: [
+          ...List<DataRow>.generate(productItems.length, (index) {
             return DataRow(
               cells: [
                 DataCell(
@@ -29,37 +33,35 @@ class _OrdersItemState extends State<OrdersItem> {
                     height: 120,
                     child: Row(
                       children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 100, width: 120,
-                                child: Image.asset(productItems[index].images, height: 50, width: 100, fit: BoxFit.cover)
-                              ),
-                              Text(productItems[index].title),
-                            ],
-                          ),
+                        Container(
+                          height: 100, width: 120,
+                          child: Image.asset(productItems[index].images, height: 50, width: 100, fit: BoxFit.cover)
                         ),
-                        
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Text(productItems[index].price.toString()),
-                              Text(productItems[index].items.toString()),
-                              Text(productItems[index].price.toString()),
-                            ],
-                          ),
-                        )                        
+                        Text(productItems[index].title),
                       ],
                     ),
                   )
                 ),
+                DataCell(Text(productItems[index].price.toString())),
+                DataCell(Text(productItems[index].items.toString())),
+                DataCell(Text(productItems[index].price.toString())),
               ],
             );
           }),
           //dataRowMaxHeight: 28.0,
+
+          DataRow( // Total row
+            cells: [
+              DataCell(Text('Total', style: TextStyle(fontWeight: FontWeight.bold))),
+              DataCell(Text('')), // Empty cells for other columns
+              DataCell(Text('')),
+              DataCell(Text('')),
+              //DataCell(Text(productItems[index].total, style: TextStyle(fontWeight: FontWeight.bold))),
+            ],
+            ),
+          ]
         ),
+        
       ),
     );
   }

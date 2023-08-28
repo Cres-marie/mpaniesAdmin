@@ -8,6 +8,7 @@ class ProductItem {
   final String country;
   final String customerName;
   final String email;
+  final String telNo;
   final String date;
   final String total;
   final String paid;
@@ -31,6 +32,7 @@ class ProductItem {
     required this.country, 
     required this.customerName,
     required this.email, 
+    required this.telNo,
     required this.date, 
     required this.total,
     required this.paid,
@@ -57,6 +59,7 @@ final List<ProductItem> productItems = [
       country: "Uganda",
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
+      telNo: '+256 007689765',
       date: "01-03-2023",
       total: "\$30009.0",
       paid: 'yes',
@@ -86,6 +89,7 @@ final List<ProductItem> productItems = [
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
       date: "01-03-2023",
+      telNo: '+256 007689765',
       total: "\$30009.0",
       paid: 'yes',
       paymentMethod: 'paypal',
@@ -113,6 +117,7 @@ final List<ProductItem> productItems = [
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
       date: "01-03-2023",
+      telNo: '+256 007689765',
       total: "\$30009.0",
       paid: 'yes',
       paymentMethod: 'paypal',
@@ -140,6 +145,7 @@ final List<ProductItem> productItems = [
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
       date: "01-03-2023",
+      telNo: '+256 007689765',
       total: "\$30009.0",
       paid: 'yes',
       paymentMethod: 'paypal',
@@ -167,6 +173,7 @@ final List<ProductItem> productItems = [
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
       date: "01-03-2023",
+      telNo: '+256 007689765',
       total: "\$30009.0",
       paid: 'yes',
       paymentMethod: 'paypal',
@@ -194,6 +201,7 @@ final List<ProductItem> productItems = [
       customerName: "Hans Weber",
       email: 'hellena1234@gmail.com',
       date: "01-03-2023",
+      telNo: '+256 007689765',
       total: "\$30009.0",
       paid: 'yes',
       paymentMethod: 'paypal',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_admin/shared/responsive.dart';
 import 'package:mpanies_admin/views/orders/widgets/ordersItemList.dart';
+import 'package:mpanies_admin/views/orders/widgets/ordersProfile.dart';
 
 class ViewOrderDetails extends StatefulWidget {
   const ViewOrderDetails({super.key});
@@ -23,8 +24,10 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
             SizedBox(height: 20,),
             if (Responsive.isDesktop(context))
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
+                  flex: 2,
                   child: Column(
                     children: [
                       OrdersItem()
@@ -32,10 +35,12 @@ class _ViewOrderDetailsState extends State<ViewOrderDetails> {
                     ],
                   ),
                 ),
-                Column(
-                  children: [
-
-                  ],
+                Expanded(
+                  child: Column(
+                    children: [
+                      OrdersProfile()
+                    ],
+                  ),
                 )
               ],
             )
