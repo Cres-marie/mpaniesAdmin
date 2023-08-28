@@ -18,7 +18,7 @@ class _CustomersOrderListState extends State<CustomersOrderList> {
         elevation: 2,
         color: Colors.white,
         child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
+          
           child: DataTable(
             //dataRowMaxHeight: 12.0,
             columns: [
